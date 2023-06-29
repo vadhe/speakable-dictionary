@@ -1,0 +1,5 @@
+import './components/Navbar'
+import './components/Search'
+import './components/WordDetails'
+import './components/Pronoun'
+import './style.css'
