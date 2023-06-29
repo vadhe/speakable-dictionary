@@ -7,7 +7,7 @@
 
 <hr>
 
-This Projeck using web component API for bundler using Vite.
+This Projeck using web component API and for bundler using Vite.
 
 ## Introduction
 
