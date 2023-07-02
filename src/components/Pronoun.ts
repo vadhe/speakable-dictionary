@@ -22,7 +22,7 @@ class Pronoun extends HTMLElement {
       <p>Keybord</p>
       <p>/ˈkiː.bɔːd/</p>
       </div>
-      <iconify-icon icon="carbon:play-filled" width="50" height="50"></iconify-icon>
+      <iconify-icon icon="carbon:play-filled" style="color:#A445ED;" width="50" height="50"></iconify-icon>
       </div>`;
   }
 }
