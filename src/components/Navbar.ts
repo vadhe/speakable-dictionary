@@ -5,12 +5,21 @@ class Navbar extends HTMLElement {
   }
 
   // Define properties and methods here
-
+  darkMode() {
+    const toggle = document.querySelector('[icon="ion:toggle"]')
+    if(toggle) {
+       toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+       })
+    }
+  }
+  
   connectedCallback() {
     this.render();
+    this.darkMode()
     // Called when the component is added to the DOM
   }
-
+  
   disconnectedCallback() {
     // Called when the component is removed from the DOM
   }
@@ -20,7 +29,6 @@ class Navbar extends HTMLElement {
     this.innerHTML = `<nav class="navbar">
         <div>
         <iconify-icon icon="fluent-mdl2:dictionary" style="color: #757575;" width="32" height="36.5"></iconify-icon>
-         
         </div>
         <div class="navbar-right">
         <p>Sans Serif</p>

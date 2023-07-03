@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+/* Light Mode */
+
 :root {
 	--dark-gray-100: #050505;
 	--dark-gray-200: #1F1F1F;
@@ -15,6 +17,15 @@
 	--purple: #A445ED;
 	--vibrant-red: #FF5252;
 }
+  
+  /* Dark Mode */
+.dark-mode {
+	--medium-gray-400: #000000;
+	--medium-gray-100: #fff;
+	--dark-gray-100: #fff;
+  }
+
+
 * {
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
@@ -125,6 +136,8 @@ section {
 }
 
 body {
+	/* background-color: var(--background-color) !important; */
+	color: var(--medium-gray-100);
 	line-height: 1;
 	padding: 1rem;
 	background-color: var(--medium-gray-400);
@@ -174,25 +187,6 @@ table {
 	margin: 0;
 }
 
-.search-bar {
-	margin-top: 2.813rem;
-	padding: 0.5rem;
-	justify-content: space-between;
-	display: flex;
-	border: 0.1rem solid rgb(244 244 244);
-	border-radius: 1rem;
-	background: rgb(244 244 244);
-}
-
-
-.search-bar input {
-	border: none;
-	width: 100%;
-	background: transparent;
-	outline: none;
-	font-weight: bold;
-	font-size: 0.125;
-}
 
 .pronoun {
 	margin-top: 2.813rem;
@@ -202,6 +196,7 @@ table {
 }
 
 .pronoun p:first-child {
+	color: var(--dark-gray-100);
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
