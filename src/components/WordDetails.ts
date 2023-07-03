@@ -24,8 +24,8 @@ class WordDetails extends HTMLElement {
   // Other lifecycle callbacks and methods
   render() {
     this.innerHTML = `<div class="word-detail">
-      <list-component title="noun" data="['ok','ok2']"></list-component>
-      <list-component title="verb" data="['1','2','3','4']"></list-component>
+      <list-component title="noun" data='${JSON.stringify(data)}'></list-component>
+      <list-component title="verb" data='${JSON.stringify(data)}'></list-component>
       </div>`;
   }
 }
