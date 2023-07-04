@@ -1,41 +1,43 @@
 class Navbar extends HTMLElement {
   constructor() {
     super();
-    // Initialize your component here
   }
 
-  // Define properties and methods here
   darkMode() {
-    const toggle = document.querySelector('[icon="ion:toggle"]')
-    if(toggle) {
-       toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-       })
-    }
+  const toggle = document.querySelector('[icon="ion:toggle"]') as HTMLElement;
+  const weatherNight = document.querySelector('[icon="mdi:weather-night"]') as HTMLElement;
+  const icDictionary =  document.querySelector('[icon="fluent-mdl2:dictionary"]') as HTMLElement;
+  const ligtColor = '#757575'
+  if (toggle && weatherNight && icDictionary) {
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        weatherNight.style.color = '#A445ED'; 
+        toggle.style.color = '#A445ED'; 
+        icDictionary.style.color = '#fff'; 
+      } else {
+        weatherNight.style.color = ligtColor; 
+        toggle.style.color = ligtColor; 
+        icDictionary.style.color = ligtColor; 
+      }
+    });
   }
+}
+
   
   connectedCallback() {
     this.render();
     this.darkMode()
-    // Called when the component is added to the DOM
   }
   
-  disconnectedCallback() {
-    // Called when the component is removed from the DOM
-  }
-
-  // Other lifecycle callbacks and methods
   render() {
     this.innerHTML = `<nav class="navbar">
         <div>
-        <iconify-icon icon="fluent-mdl2:dictionary" style="color: #757575;" width="32" height="36.5"></iconify-icon>
+        <iconify-icon icon="fluent-mdl2:dictionary" width="32" height="36.5"></iconify-icon>
         </div>
         <div class="navbar-right">
-        <p>Sans Serif</p>
-        <hr/>
-        <iconify-icon icon="ep:arrow-down-bold" style="color: #a445ed;" width="20" height="20"></iconify-icon>
-        <iconify-icon icon="ion:toggle" style="color: #757575;" width="20" height="20"></iconify-icon>
-        <iconify-icon icon="mdi:weather-night" style="color: #757575;" width="20" height="20"></iconify-icon>
+        <iconify-icon icon="ion:toggle" style="cursor: pointer;"  width="20" height="20"></iconify-icon>
+        <iconify-icon icon="mdi:weather-night"  width="20" height="20"></iconify-icon>
         </div>
         </nav>`;
   }

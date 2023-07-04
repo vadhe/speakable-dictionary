@@ -1,28 +1,15 @@
 class SearchBar extends HTMLElement {
   constructor() {
     super();
-    // Initialize your component here
   }
 
-  // Define properties and methods here
 
   connectedCallback() {
     this.render();
-    // Called when the component is added to the DOM
   }
 
-  disconnectedCallback() {
-    // Called when the component is removed from the DOM
-  }
-  async handleSearch(event: any) {
-    console.log(event.target.value);
-  }
-
-  // Other lifecycle callbacks and methods
   render() {
-    this.attachShadow({ mode: "open" });
-    if (this.shadowRoot !== null) {
-      this.shadowRoot.innerHTML = `
+      this.innerHTML = `
       <style>
       .search-bar {
         margin-top: 2.813rem;
@@ -48,11 +35,6 @@ class SearchBar extends HTMLElement {
     <input id="keyword"></input>
     <iconify-icon icon="circum:search" style="color: #A445ED;" width="24" height="24"></iconify-icon>
     </div>`;
-      const keywordInput = this.shadowRoot!.getElementById("keyword");
-      if (keywordInput !== null) {
-        keywordInput.addEventListener("input", this.handleSearch.bind(this));
-      }
-    }
   }
 }
 
